@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Crear página{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-header bg-success text-white">
+      <i class="fa-solid fa-plus"></i> Crear nueva página
+    </div>
+    <div class="card-body">
+      <form method="post" enctype="multipart/form-data" class="needs-validation">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">
+          <i class="fa-solid fa-save"></i> Guardar
+        </button>
+        <a href="{% url 'pages:list' %}" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Cancelar
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

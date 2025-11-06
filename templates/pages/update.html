@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Editar página{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-lg">
+    <div class="card-header bg-warning text-dark">
+      <i class="fa-solid fa-pen"></i> Editar página
+    </div>
+    <div class="card-body">
+      <form method="post" enctype="multipart/form-data" class="needs-validation">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">
+          <i class="fa-solid fa-save"></i> Actualizar
+        </button>
+        <a href="{% url 'pages:list' %}" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Cancelar
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

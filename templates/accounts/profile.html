@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-info text-white">
+          <i class="fa-solid fa-id-card"></i> Mi Perfil
+        </div>
+        <div class="card-body text-center">
+          {% if profile.avatar %}
+            <img src="{{ profile.avatar.url }}" alt="avatar" class="rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
+          {% else %}
+            <i class="fa-solid fa-circle-user fa-9x text-secondary mb-3"></i>
+          {% endif %}
+          <h3>{{ profile.first_name }} {{ profile.last_name }}</h3>
+          <p><strong>Email:</strong> {{ request.user.email }}</p>
+          <p><strong>Bio:</strong> {{ profile.bio }}</p>
+          <p><strong>Link:</strong> <a href="{{ profile.link }}" target="_blank">{{ profile.link }}</a></p>
+          <p><strong>Cumpleaños:</strong> {{ profile.birthday }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{% url 'profile_edit' %}" class="btn btn-warning">
+            <i class="fa-solid fa-pen"></i> Editar perfil
+          </a>
+          <a href="{% url 'password_change' %}" class="btn btn-secondary">
+            <i class="fa-solid fa-key"></i> Cambiar contraseña
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+          <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fa-solid fa-sign-in-alt"></i> Entrar
+            </button>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          ¿No tienes cuenta? <a href="{% url 'signup' %}">Regístrate aquí</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

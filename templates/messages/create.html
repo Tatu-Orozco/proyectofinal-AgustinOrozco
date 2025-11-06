@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Nuevo mensaje{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-success text-white">
+          <i class="fa-solid fa-paper-plane"></i> Enviar nuevo mensaje
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-paper-plane"></i> Enviar
+            </button>
+            <a href="{% url 'messages:inbox' %}" class="btn btn-secondary">
+              <i class="fa-solid fa-arrow-left"></i> Cancelar
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

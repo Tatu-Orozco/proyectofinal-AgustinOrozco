@@ -15,16 +15,18 @@
         <i class="fa-solid fa-calendar"></i> Fecha: {{ page.created_at }}
       </p>
 
-      {% if user.is_authenticated and (user.is_staff or user == page.author) %}
-        <div class="mt-3">
-          <a href="{% url 'pages:update' page.pk %}" class="btn btn-warning">
-            <i class="fa-solid fa-pen"></i> Editar
-          </a>
-          <a href="{% url 'pages:delete' page.pk %}" class="btn btn-danger">
-            <i class="fa-solid fa-trash"></i> Borrar
-          </a>
-        </div>
+      {% if user.is_authenticated %}
+        {% if user.is_staff or user == page.author %}
+            <div class="mt-3">
+            <a href="{% url 'pages:update' page.pk %}" class="btn        btn-warning">
+                <i class="fa-solid fa-pen"></i> Editar
+            </a>
+            <a href="{% url 'pages:delete' page.pk %}" class="btn        btn-danger">
+                <i class="fa-solid fa-trash"></i> Borrar
+            </a>
+            </div>
       {% endif %}
+     {% endif %} 
     </div>
   </div>
 

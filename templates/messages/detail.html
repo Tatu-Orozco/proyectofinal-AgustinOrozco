@@ -20,8 +20,8 @@
           </small>
         </div>
         <div class="card-footer text-center">
-          <a href="{% url 'messages:inbox' %}" class="btn btn-secondary">
-            <i class="fa-solid fa-arrow-left"></i> Volver al inbox
+          <a href="{% url 'messages:create' %}?reply_to={{ msg.pk }}" class="btn btn-success">
+            <i class="fa-solid fa-reply"></i> Responder         
           </a>
         </div>
       </div>

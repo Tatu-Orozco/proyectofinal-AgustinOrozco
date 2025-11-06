@@ -25,3 +25,7 @@ Aplicación web estilo blog desarrollada en Django. Incluye autenticación (logi
 3. `python manage.py runserver`
 
 Nota: No se incluye `db.sqlite3` ni la carpeta `media/` en el repositorio.
+
+## link al video de demostracion, valido por 30 dias: 
+https://app.filmora.io/#/object/d463etcp7c8q5b1v9dp0?source=%7B%22product_id%22:%227598%22,%22product_page%22:%22share_url%22,%22product_version%22:%2214.10.5.15330%22%7D
+
